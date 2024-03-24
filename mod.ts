@@ -6,6 +6,10 @@ export type {
 } from "./src/types.ts"
 
 export { 
+    EmptyFile
+} from "./src/files/empty.ts"
+
+export { 
     MockedFile
 } from "./src/files/mocked.ts"
 

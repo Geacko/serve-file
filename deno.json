@@ -1,5 +1,8 @@
 {
   "name": "@geacko/serve-file",
-  "version": "1.0.0",
-  "exports": "./mod.ts"
+  "version": "1.0.1",
+  "exports": "./mod.ts",
+  "tasks": {
+    "test": "deno run --allow-net src/files/mocked.ts"
+  }
 }

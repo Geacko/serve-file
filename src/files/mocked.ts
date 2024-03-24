@@ -1,32 +1,32 @@
 import {
-    ServerFile
+    ServerFile, ServerReadableFile
 } from '../types.ts'
 
 const id = <T>(x: T) => x
 
 export class MockedFile implements ServerFile {
 
-    get size() {
+    get size() : number {
         return 0
     }
 
-    get lastModified() {
+    get lastModified() : number {
         return 0
     }
 
-    get etag() {
+    get etag() : string {
         return ``
     }
 
-    get contentType() {
+    get contentType() : string {
         return ``
     }
 
-    get additionalHeaders() {
+    get additionalHeaders() : Headers | null {
         return null
     }
 
-    open() {
+    open() : ServerReadableFile {
         
         return {
             readable : ReadableStream.from([new Uint8Array(0)]),

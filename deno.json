@@ -1,5 +1,5 @@
 {
-  "name": "@geacko/serve-static",
+  "name": "@geacko/serve-file",
   "version": "1.0.0",
   "exports": "./mod.ts"
 }

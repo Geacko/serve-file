@@ -1,3 +1,5 @@
+// Copyright 2024 Grégoire Jacquot. All rights reserved. MIT license.
+
 import { Method, HeaderName, Status } from "./constants.ts"
 import { matchEtag } from "./etag.ts"
 import { Nullable } from "./types.ts"

@@ -1,3 +1,5 @@
+// Copyright 2024 Grégoire Jacquot. All rights reserved. MIT license.
+
 import {
     ServerFile, ServerReadableFile
 } from '../types.ts'

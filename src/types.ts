@@ -1,3 +1,5 @@
+// Copyright 2024 Grégoire Jacquot. All rights reserved. MIT license.
+
 export type ServeFileHandler = (
     req: Request, file: ServerFile
 ) => Response | Promise<Response>

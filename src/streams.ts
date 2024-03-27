@@ -1,3 +1,5 @@
+// Copyright 2024 Grégoire Jacquot. All rights reserved. MIT license.
+
 import { HeaderName, AcceptRangeUnit } from "./constants.ts"
 import { Seekable } from "./types.ts"
 import { Nullable, Part } from "./types.ts"

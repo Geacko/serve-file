@@ -1,3 +1,5 @@
+// Copyright 2024 Grégoire Jacquot. All rights reserved. MIT license.
+
 import { ServeFileHandler } from "./types.ts"
 import { Method, Status, HeaderName, AcceptRangeUnit } from "./constants.ts"
 import { evaluatePreconds } from "./preconditions.ts"

@@ -1,4 +1,4 @@
-// Copyright 2024 Grégoire Jacquot. All rights reserved. MIT license.
+// Copyright 2024 Grégoire Jacquot <gregoirejacquot@outlook.com>. All rights reserved. MIT license.
 
 /** @see https://www.rfc-editor.org/rfc/rfc9110#name-comparison-2 */
 export function matchEtag(

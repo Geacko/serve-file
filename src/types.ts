@@ -1,4 +1,4 @@
-// Copyright 2024 Grégoire Jacquot. All rights reserved. MIT license.
+// Copyright 2024 Grégoire Jacquot <gregoirejacquot@outlook.com>. All rights reserved. MIT license.
 
 export type ServeFileHandler = (
     req: Request, file: ServerFile

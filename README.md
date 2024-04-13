@@ -1,2 +1,2 @@
 # serve-file
-Handler for serving static resources
+Cross-platform HTTP request handler for static file serving

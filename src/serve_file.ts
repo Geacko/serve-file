@@ -98,7 +98,7 @@ const commonHeaders = [
  *  HTTP Request handler.
  *  
  *  **Example**
- *  ```
+ *  ```ts
  *  import {
  *      serveFile
  *  } from 'jsr:@geacko/serve-file'

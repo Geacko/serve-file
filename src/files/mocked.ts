@@ -12,7 +12,7 @@ export class MockedFile implements ServerFile {
 
     #lastModified
 
-    constructor(lastModified = Date.now()) {
+    constructor(lastModified: number = Date.now()) {
         this.#lastModified = lastModified
     }
 

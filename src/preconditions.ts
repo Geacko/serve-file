@@ -1,8 +1,16 @@
-// Copyright 2024 Grégoire Jacquot <gregoirejacquot@outlook.com>. All rights reserved. MIT license.
+import { 
+    Method, 
+    HeaderName, 
+    Status 
+} from "./constants.ts"
 
-import { Method, HeaderName, Status } from "./constants.ts"
-import { matchEtag } from "./etag.ts"
-import { Nullable } from "./types.ts"
+import { 
+    matchEtag 
+} from "./etag.ts"
+
+import type { 
+    Nullable 
+} from "./types.ts"
 
 function testPreconditionFailed(
     headers : Headers, e : Nullable<string>, t : Nullable<number>
@@ -69,7 +77,7 @@ function testConditionalRange(
 
 }
 
-/** @see https://www.rfc-editor.org/rfc/rfc9110#name-precedence-of-preconditions */
+/** @internal @see https://www.rfc-editor.org/rfc/rfc9110#name-precedence-of-preconditions */
 export function evaluatePreconds(
     req: Request, etag : Nullable<string>, date : Nullable<Date>
 ) : | Status.OK

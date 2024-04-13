@@ -1,6 +1,4 @@
-// Copyright 2024 Grégoire Jacquot <gregoirejacquot@outlook.com>. All rights reserved. MIT license.
-
-/** @see https://www.rfc-editor.org/rfc/rfc9110#name-comparison-2 */
+/** @internal @see https://www.rfc-editor.org/rfc/rfc9110#name-comparison-2 */
 export function matchEtag(
     reqHeader: string, etag: string, acceptWeakness = !1
 ) : boolean {

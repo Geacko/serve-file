@@ -1,11 +1,17 @@
-// Copyright 2024 Grégoire Jacquot <gregoirejacquot@outlook.com>. All rights reserved. MIT license.
+import { 
+    HeaderName, 
+    AcceptRangeUnit 
+} from "./constants.ts"
 
-import { HeaderName, AcceptRangeUnit } from "./constants.ts"
-import { Seekable } from "./types.ts"
-import { Nullable, Part } from "./types.ts"
+import type { 
+    Seekable, 
+    Nullable, 
+    Part 
+} from "./types.ts"
 
 const EOL_ENCODED = new Uint8Array([0x0D, 0x0A])
 
+/** @internal */
 export function createSlicedStream(
     cursor: Seekable, start: number, count: number
 ) : TransformStream<Uint8Array, Uint8Array> {
@@ -37,7 +43,7 @@ export function createSlicedStream(
 
 }
 
-/** @see https://www.rfc-editor.org/rfc/rfc9110#name-media-type-multipart-bytera */
+/** @internal @see https://www.rfc-editor.org/rfc/rfc9110#name-media-type-multipart-bytera */
 export function createMultipartBytesStream(
     cursor: Seekable, size: number, contentType: Nullable<string>, parts: Part[], boundary: string
 ) : TransformStream<Uint8Array, Uint8Array> {

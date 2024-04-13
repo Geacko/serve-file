@@ -1,5 +1,4 @@
-// Copyright 2024 Grégoire Jacquot <gregoirejacquot@outlook.com>. All rights reserved. MIT license.
-
+/** @internal */
 export const enum Status {
 
     OK                    = 200,
@@ -14,6 +13,7 @@ export const enum Status {
 
 }
 
+/** @internal */
 export const enum Method {
 
     GET     = `GET`,
@@ -22,6 +22,7 @@ export const enum Method {
 
 }
 
+/** @internal */
 export const enum HeaderName {
 
     ALLOW               = `Allow`,
@@ -41,6 +42,7 @@ export const enum HeaderName {
 
 }
 
+/** @internal */
 export const enum AcceptRangeUnit {
 
     NONE  = `none`  ,

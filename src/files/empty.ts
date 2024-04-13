@@ -1,9 +1,10 @@
-// Copyright 2024 Grégoire Jacquot <gregoirejacquot@outlook.com>. All rights reserved. MIT license.
-
-import {
+import type {
     ServerFile, ServerReadableFile
 } from '../types.ts'
 
+/** 
+ *  Empty file for debugging 
+ */
 export class EmptyFile implements ServerFile {
 
     get size() : number {

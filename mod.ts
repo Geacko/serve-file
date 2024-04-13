@@ -1,5 +1,3 @@
-// Copyright 2024 Grégoire Jacquot <gregoirejacquot@outlook.com>. All rights reserved. MIT license.
-
 export type { 
     ServeFileHandler,
     Seekable,

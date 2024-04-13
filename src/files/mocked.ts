@@ -1,17 +1,18 @@
-// Copyright 2024 Grégoire Jacquot <gregoirejacquot@outlook.com>. All rights reserved. MIT license.
-
-import {
+import type {
     ServerFile, ServerReadableFile
 } from '../types.ts'
 
 const SIZE = 1024
 const BLOB = new Uint8Array(SIZE).map(() => 0x41 + (26 * Math.random()))
 
+/** 
+ *  Mocked file for debugging 
+ */
 export class MockedFile implements ServerFile {
 
     #lastModified
 
-    constructor(lastModified: number) {
+    constructor(lastModified = Date.now()) {
         this.#lastModified = lastModified
     }
 

@@ -1,10 +1,23 @@
-// Copyright 2024 Grégoire Jacquot <gregoirejacquot@outlook.com>. All rights reserved. MIT license.
+import type { 
+    ServeFileHandler, 
+    Part 
+} from "./types.ts"
 
-import { ServeFileHandler } from "./types.ts"
-import { Method, Status, HeaderName, AcceptRangeUnit } from "./constants.ts"
-import { evaluatePreconds } from "./preconditions.ts"
-import { createSlicedStream, createMultipartBytesStream } from "./streams.ts"
-import { Part } from "./types.ts"
+import { 
+    HeaderName,
+    Method, 
+    Status, 
+    AcceptRangeUnit 
+} from "./constants.ts"
+
+import { 
+    evaluatePreconds 
+} from "./preconditions.ts"
+
+import { 
+    createSlicedStream, 
+    createMultipartBytesStream 
+} from "./streams.ts"
 
 /** @see https://www.rfc-editor.org/rfc/rfc9110#name-range-specifiers */
 function computeRangeHeader(
@@ -81,6 +94,46 @@ const commonHeaders = [
     [HeaderName.ACCEPT_RANGES, `${AcceptRangeUnit.BYTES}`],
 ]
 
+/**
+ *  HTTP Request handler.
+ *  
+ *  **Example**
+ *  ```
+ *  import {
+ *      serveFile
+ *  } from 'jsr:@geacko/serve-file'
+ *  
+ *  const headers = new Headers([
+ *      // ...
+ *  ])
+ * 
+ *  function serve(req: Request) {
+ *  
+ *      if (req.method == 'OPTIONS) {
+ *          return new Response(void 0, { status: 204 , headers }) 
+ *      }
+ * 
+ *      if (req.method != 'GET' && 
+ *          req.method != 'HEAD') {
+ *          return new Response(void 0, { status: 405 })
+ *      }
+ *  
+ *      if (!URL.canBeParsed(req.url)) {
+ *          return new Response(void 0, { status: 400 })
+ *      }
+ *      
+ *      // We call some ServerFile Factory
+ *      const file = createFile(req)
+ *      
+ *      if (file) {
+ *          return serveFile(req, file)
+ *      }    
+ * 
+ *      return new Response(void 0, { status: 404 })
+ *  
+ *  }
+ *  ```
+ */
 export const serveFile: ServeFileHandler = async (
     req, file
 ) => {
